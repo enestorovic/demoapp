@@ -29,7 +29,7 @@ before_fork do |server, worker|
 	
 end
 
-after_form do |server, worker|
+after_fork do |server, worker|
 	defined?(ActiveRecord::Base) and
 		ActiveRecord::Base.establish_connection
 end
